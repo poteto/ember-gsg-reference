@@ -1,0 +1,5 @@
+deployment:
+  staging:
+    branch: develop
+    heroku:
+      appname: ember-getting-started

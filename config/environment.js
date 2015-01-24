@@ -3,6 +3,8 @@
 module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'ember-getting-started',
+    podModulePrefix: 'ember-getting-started/pods',
+    usePodsByDefault: true,
     environment: environment,
     baseURL: '/',
     locationType: 'auto',
@@ -16,6 +18,16 @@ module.exports = function(environment) {
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
+    },
+
+    contentSecurityPolicy: {
+      'default-src': "'none'",
+      'script-src': "'self' 'unsafe-eval' 'unsafe-inline' use.typekit.net",
+      'connect-src': "'self' www.google-analytics.com wss://*.firebaseio.com",
+      'font-src': "'self' data:",
+      'img-src': "'self' p.typekit.net google-analytics.com",
+      'style-src': "'self' 'unsafe-inline' use.typekit.net fonts.googleapis.com",
+      'media-src': "'self'"
     }
   };
 

@@ -24,6 +24,12 @@ You will need the following things properly installed on your computer.
 
 ## Running / Development
 
+First, create a new [Firebase app](https://www.firebase.com/), and then note down the URL. Make a copy of `.env.example` and save it as `.env`, with your URL like so:
+
+```
+FIREBASE_URL=app-url
+```
+
 * `ember server`
 * Visit your app at [http://localhost:4200](http://localhost:4200).
 

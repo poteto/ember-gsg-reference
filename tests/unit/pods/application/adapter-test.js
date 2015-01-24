@@ -10,6 +10,15 @@ moduleFor('adapter:application', 'ApplicationAdapter', {
 
 // Replace this with your real tests.
 test('it exists', function() {
+  expect(1);
   var adapter = this.subject();
+
   ok(adapter);
+});
+
+test('it has a firebase property', function() {
+  expect(1);
+  var adapter = this.subject();
+
+  ok(adapter.get('firebase'));
 });

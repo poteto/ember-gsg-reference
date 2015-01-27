@@ -23,7 +23,7 @@ module.exports = function(environment) {
 
     contentSecurityPolicy: {
       'default-src': "'none'",
-      'script-src': "'self' 'unsafe-eval' 'unsafe-inline' use.typekit.net",
+      'script-src': "'self' 'unsafe-eval' 'unsafe-inline' use.typekit.net https://*.firebaseio.com",
       'connect-src': "'self' www.google-analytics.com wss://*.firebaseio.com",
       'font-src': "'self' data:",
       'img-src': "'self' p.typekit.net google-analytics.com",

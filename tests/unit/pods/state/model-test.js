@@ -3,7 +3,7 @@ import {
   test
 } from 'ember-qunit';
 
-moduleForModel('country', 'Country', {
+moduleForModel('state', 'State', {
   // Specify the other units that are required for this test.
   needs: ['model:listing']
 });

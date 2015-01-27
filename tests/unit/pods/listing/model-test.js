@@ -5,7 +5,7 @@ import {
 
 moduleForModel('listing', 'Listing', {
   // Specify the other units that are required for this test.
-  needs: ['model:country']
+  needs: ['model:state']
 });
 
 test('it exists', function() {

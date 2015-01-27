@@ -6,7 +6,7 @@ var Router = Ember.Router.extend({
 });
 
 Router.map(function() {
-  this.resource('country', { path: '/:country_id' }, function() {
+  this.resource('state', { path: '/:state_id' }, function() {
     this.route('listing');
   });
 

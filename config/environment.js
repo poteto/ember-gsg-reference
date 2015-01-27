@@ -27,7 +27,7 @@ module.exports = function(environment) {
       'script-src': "'self' 'unsafe-eval' 'unsafe-inline' use.typekit.net https://*.firebaseio.com",
       'connect-src': "'self' www.google-analytics.com wss://*.firebaseio.com",
       'font-src': "'self' data:",
-      'img-src': "'self' p.typekit.net google-analytics.com",
+      'img-src': "'self' p.typekit.net google-analytics.com lorempixel.com",
       'style-src': "'self' 'unsafe-inline' use.typekit.net fonts.googleapis.com",
       'media-src': "'self'"
     }

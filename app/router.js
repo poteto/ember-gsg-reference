@@ -5,7 +5,8 @@ var Router = Ember.Router.extend({
   location: config.locationType
 });
 
-Router.map(() => {
+Router.map(function() {
+  this.resource('listing', { path: 'listings/:listing_name' }, function() {});
 });
 
 export default Router;

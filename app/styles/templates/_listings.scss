@@ -1,0 +1,9 @@
+.stateWrapper {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.listings-container {
+  flex: $listings-flex;
+  order: $listings-order;
+}

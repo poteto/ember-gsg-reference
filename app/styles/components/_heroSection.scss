@@ -1,6 +1,7 @@
 .heroSection {
   min-height: $heroSection-height;
   display: flex;
+  flex: 1 100%;
   justify-content: center;
   align-items: center;
 }
@@ -9,6 +10,6 @@
   color: $white;
   border: $default-border-width solid $white;
   display: inline-block;
-  padding: $default-unit*2 $default-unit*6;
+  padding: $default-unit*2 $default-unit*10;
   border-radius: $default-unit;
 }

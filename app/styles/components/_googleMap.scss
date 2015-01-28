@@ -1,0 +1,9 @@
+.googleMap-container {
+  flex: $googleMap-flex;
+  order: $googleMap-order;
+}
+
+.googleMap {
+  min-height: 600px;
+  width: 100%;
+}

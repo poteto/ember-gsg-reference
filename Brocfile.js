@@ -4,7 +4,7 @@ var EmberApp = require('ember-cli/lib/broccoli/ember-app');
 
 var app = new EmberApp({
   dotEnv: {
-    clientAllowedKeys: [ 'FIREBASE_URL' ]
+    clientAllowedKeys: [ 'FIREBASE_URL', 'TYPEKIT_ID' ]
   }
 });
 

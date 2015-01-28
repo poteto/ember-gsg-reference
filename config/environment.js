@@ -5,7 +5,8 @@ module.exports = function(environment) {
     modulePrefix: 'ember-getting-started',
     podModulePrefix: 'ember-getting-started/pods',
     usePodsByDefault: true,
-    firebase_instance: process.env.FIREBASE_URL,
+    firebaseUrl: process.env.FIREBASE_URL,
+    typekitId: process.env.TYPEKIT_ID,
     environment: environment,
     baseURL: '/',
     locationType: 'auto',
@@ -23,10 +24,10 @@ module.exports = function(environment) {
 
     contentSecurityPolicy: {
       'default-src': "'none'",
-      'script-src': "'self' 'unsafe-eval' 'unsafe-inline' use.typekit.net",
+      'script-src': "'self' 'unsafe-eval' 'unsafe-inline' use.typekit.net https://*.firebaseio.com *.googleapis.com *.gstatic.com",
       'connect-src': "'self' www.google-analytics.com wss://*.firebaseio.com",
-      'font-src': "'self' data:",
-      'img-src': "'self' p.typekit.net google-analytics.com",
+      'font-src': "'self' data: fonts.gstatic.com",
+      'img-src': "'self' p.typekit.net google-analytics.com lorempixel.com *.googleapis.com *.gstatic.com",
       'style-src': "'self' 'unsafe-inline' use.typekit.net fonts.googleapis.com",
       'media-src': "'self'"
     }

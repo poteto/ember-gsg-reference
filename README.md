@@ -28,7 +28,10 @@ First, create a new [Firebase app](https://www.firebase.com/), and then note dow
 
 ```
 FIREBASE_URL=app-url
+TYPEKIT_ID=typekit-id 
 ```
+
+You can also add a [Typekit ID](https://typekit.com/) if you have one.
 
 * `ember server`
 * Visit your app at [http://localhost:4200](http://localhost:4200).

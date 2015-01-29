@@ -1,1 +1,7 @@
-<pre>Index</pre>
+<div class="row">
+  {{#each listing in model.listings}}
+    <div class="small-6 columns">
+      {{listing-tile listing=listing}}
+    </div>
+  {{/each}}
+</div>

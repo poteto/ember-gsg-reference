@@ -1,6 +1,7 @@
 .googleMap-container {
   flex: $googleMap-flex;
   order: $googleMap-order;
+  max-width: 300px;
 }
 
 .googleMap {

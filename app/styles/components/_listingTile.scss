@@ -1,0 +1,30 @@
+$listing-tile-padding: 20px;
+
+.listing-tile {
+  border-radius: 10px;
+  margin: 10px 10px 10px 30px;
+  border: 2px solid $smoke;
+  color: $monsoon;
+
+  // temporary until the tiles link somewhere...
+  cursor: pointer;
+
+  .info {
+    padding: $listing-tile-padding;
+  }
+
+  img {
+    border-radius: 10px 10px 0 0;
+    width: 100%;
+  }
+
+  .price {
+    color: $primary-color;
+    font-size: $h5-font-size;
+  }
+
+  .name {
+    font-size: $h5-font-size;
+  }
+
+}

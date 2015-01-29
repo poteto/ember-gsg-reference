@@ -56,7 +56,20 @@ Make use of the many generators for code, try `ember help generate` for more det
 
 ### Deploying
 
-Specify what it takes to deploy your app.
+### Heroku
+
+Easily deploy this app to Heroku using the excellent [Ember CLI Buildpack](https://github.com/tonycoco/heroku-buildpack-ember-cli) by [@tonycoco](https://github.com/tonycoco).
+
+```bash
+$ heroku create --buildpack https://github.com/tonycoco/heroku-buildpack-ember-cli.git
+
+$ git push heroku master
+...
+-----> Heroku receiving push
+-----> Fetching custom buildpack
+...
+
+```
 
 ## Further Reading / Useful Links
 

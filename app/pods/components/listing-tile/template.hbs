@@ -1,7 +1,9 @@
-<img {{bind-attr src=listing.image}} />
+<div class="listingTile-coverImage">
+  <img {{bind-attr src=listing.image}} />
+</div>
 
-<div class="info">
-  <div class="price right">{{listing.formattedPrice}}</div>
-  <div class="name">{{listing.name}}</div>
-  <small class="city">{{listing.city}}</small>
+<div class="listingTile-details">
+  <div class="listingTile-details--price right">{{listing.formattedPrice}}</div>
+  <div class="listingTile-details--name">{{listing.name}}</div>
+  <small class="listingTile-details--city">{{listing.city}}</small>
 </div>

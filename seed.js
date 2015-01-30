@@ -72,13 +72,13 @@ function getStateData(stateInfo, index) {
       firebaseId:   firebaseId,
       defaultCity:  stateInfo.defaultCity
     };
-  })
+  });
 }
 
 function saveState(stateData) {
   var childRef   = statesRef.child(stateData.firebaseId);
   var writeStateToFirebase = RSVP.denodeify(childRef.set.bind(childRef));
-  console.log('Saving state ' + stateData.name)
+  console.log('Saving state ' + stateData.name);
 
   // properties for the ember data model
   var data = {
@@ -103,7 +103,7 @@ function createListingsForState(stateData) {
     var writeListingToFirebase = RSVP.denodeify(childRef.set.bind(childRef));
 
     // firebase reference to update state's listing collection
-    var stateListingRef     = statesRef.child(stateData.firebaseId + '/listings/' + newListingId)
+    var stateListingRef     = statesRef.child(stateData.firebaseId + '/listings/' + newListingId);
     var updateStateListings = RSVP.denodeify(stateListingRef.set.bind(stateListingRef));
 
     var data = {
@@ -112,7 +112,7 @@ function createListingsForState(stateData) {
       name:        faker.lorem.sentence(),
       lat:         coordinates.lat,
       lng:         coordinates.lng,
-      price:       200,
+      price:       Math.round((Math.random() * 200) + 100),
       state:       stateData.firebaseId,
       image:       getListingImage()
     };
@@ -128,7 +128,7 @@ function getBackgroundImage(id) {
 }
 
 function getListingImage() {
-  return "https://placeimg.com/640/480/arch?id=" + lastListingId;
+  return "https://placeimg.com/400/200/arch?id=" + lastListingId;
 }
 
 function generateNewListingId() {

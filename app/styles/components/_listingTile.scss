@@ -1,30 +1,30 @@
-$listing-tile-padding: 20px;
+.listingTile {
+  margin-bottom: $default-unit*6;
+  height: $listingTile-height;
 
-.listing-tile {
-  border-radius: 10px;
-  margin: 10px 10px 10px 30px;
-  border: 2px solid $smoke;
-  color: $monsoon;
-
-  // temporary until the tiles link somewhere...
-  cursor: pointer;
-
-  .info {
-    padding: $listing-tile-padding;
+  &-coverImage {
+    height: 200px;
+    & img {
+      height: 100%;
+      width: auto;
+    }
   }
 
-  img {
-    border-radius: 10px 10px 0 0;
-    width: 100%;
-  }
+  &-details {
+    padding: $default-unit*2;
 
-  .price {
-    color: $primary-color;
-    font-size: $h5-font-size;
-  }
+    &--name {
+      @include text-truncate;
+      color: $oil;
+      width: 85%;
+    }
 
-  .name {
-    font-size: $h5-font-size;
-  }
+    &--price {
+      color: $primary-color;
+    }
 
+    &--city {
+      color: $base;
+    }
+  }
 }

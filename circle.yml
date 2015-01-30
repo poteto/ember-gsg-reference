@@ -1,11 +1,4 @@
 deployment:
-  development:
-    branch: /feature.*/
-    commands:
-      - npm install -g ember-cli ember-cli-divshot
-      - ember divshot push development --token $DIVSHOT_TOKEN
-
-
   staging:
     branch: develop
     commands:

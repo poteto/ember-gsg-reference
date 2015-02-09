@@ -3,7 +3,7 @@
   "dependencies": {
     "handlebars": "~2.0.0",
     "jquery": ">= 1.7.0 < 2.2.0",
-    "ember": "1.9.x",
+    "ember": "1.10.x",
     "ember-data": "1.0.0-beta.12",
     "ember-resolver": "~0.1.11",
     "loader.js": "ember-cli/loader.js#1.0.1",
@@ -14,7 +14,7 @@
     "ember-qunit-notifications": "0.0.5",
     "qunit": "~1.17.1",
     "foundation": "~5.5.0",
-    "emberfire": "~1.3.2",
+    "emberfire": "https://gist.github.com/c694ac72807233dcf395.git",
     "sinon": "http://sinonjs.org/releases/sinon-1.12.2.js"
   }
 }

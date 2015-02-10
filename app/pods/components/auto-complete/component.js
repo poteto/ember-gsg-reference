@@ -1,32 +1,40 @@
 import Ember from 'ember';
 
+const computed = Ember.computed;
+
 export default Ember.Component.extend({
   classNames:   ['auto-complete'],
 
   // default values
+  placeholder:  '',
   value:        '',
-  placeholder:  null,
   content:      [],
+  valuePath:    null,
 
-  hasContent:   Ember.computed.bool('filteredResults.length'),
-  hasValue:     Ember.computed.notEmpty('value'),
-  showDropdown: Ember.computed.and('hasContent', 'hasValue'),
+  hasContent:   computed.bool('filteredResults.length'),
+  hasValue:     computed.notEmpty('value'),
+  showDropdown: computed.and('hasContent', 'hasValue'),
 
   actions: {
     submit: function() {
-      this.sendAction(this.get('value'));
+      this.sendAction('action', this.get('value'));
     }
   },
 
   filteredResults: function() {
-    var value   = this.get('value');
-    var regex   = new RegExp(value, 'i');
-    var content = this.get('content') || [];
+    let value     = this.get('value');
+    let regex     = new RegExp(value, 'i');
+    let content   = this.get('content') || [];
+    let valuePath = this.get('valuePath');
 
     if (value.length === 0) { return []; }
 
-    return content.filter(function(result) {
-      return result.match(regex);
-    }).slice(0, 10);
+    return content.filter(function(record) {
+      let result = valuePath ? record.get(valuePath) : record;
+
+      if (result) {
+        return result.match(regex);
+      }
+    }).slice(0, 5);
   }.property('content', 'value')
 });

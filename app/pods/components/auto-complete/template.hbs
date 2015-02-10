@@ -3,16 +3,22 @@
 
   {{#if showDropdown }}
     <div class="results">
-      {{#each result in filteredResults }}
+      {{#each record in filteredResults }}
+
         <div class="result">
-          {{result}}
+          {{#if template}
+            {{yield record}}
+          {{else}}
+            {{record}}
+          {{/if}}
         </div>
+
       {{/each}}
     </div>
   {{/if}}
 </div>
 
 <div class="large-4 small-3 columns">
-  <a href="#" class="button expand">Search</a>
+  <a class="button expand" {{action 'submit'}}>Search</a>
 </div>
 

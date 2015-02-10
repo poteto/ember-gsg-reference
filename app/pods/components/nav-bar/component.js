@@ -5,8 +5,8 @@ export default Ember.Component.extend({
   classNames: [ 'top-bar' ],
 
   actions: {
-    search: function(searchResult) {
-
+    search: function() {
+      // do something useful here ...
     }
   }
 });

@@ -6,11 +6,13 @@
       {{#each record in filteredResults }}
 
         <div class="result">
-          {{#if template}
+
+          {{#if template}}
             {{yield record}}
           {{else}}
             {{record}}
           {{/if}}
+
         </div>
 
       {{/each}}

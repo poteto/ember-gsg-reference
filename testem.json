@@ -4,6 +4,7 @@
   "launch_in_ci": [
     "PhantomJS"
   ],
+  "reporter": "xunit",
   "launch_in_dev": [
     "PhantomJS",
     "Chrome"

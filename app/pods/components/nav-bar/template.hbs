@@ -14,7 +14,18 @@
 
   <!-- Left Nav Section -->
   <ul class="left">
-    <li><a href="#">Search</a></li>
+    <li class="has-form">
+      {{#auto-complete class="row collapse listing-search" placeholder="Find somewhere to stay"
+         action='search' content=listings searchPath='name' as |listing|}}
+
+        <!-- Custom template for the typeahead-->
+        <div class="price right">{{listing.price}}</div>
+
+        <div class="listing-name">{{listing.name}}</div>
+
+        <div class="city">{{listing.city}}</div>
+      {{/auto-complete}}
+    </li>
     <li><a href="#">Browse</a></li>
   </ul>
 </section>

@@ -3,8 +3,9 @@ import {
   test
 } from 'ember-qunit';
 
-moduleForComponent('nav-bar', 'NavBarComponent', {
-  needs: ['component:auto-complete']
+moduleForComponent('auto-complete', 'AutoCompleteComponent', {
+  // specify the other units that are required for this test
+  // needs: ['component:foo', 'helper:bar']
 });
 
 test('it renders', function() {

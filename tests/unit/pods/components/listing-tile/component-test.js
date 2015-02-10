@@ -5,7 +5,7 @@ import {
 
 moduleForComponent('listing-tile', 'ListingTileComponent', {
   // specify the other units that are required for this test
-  // needs: ['component:foo', 'helper:bar']
+  needs: ['helper:format-currency']
 });
 
 test('it renders', function() {

@@ -9,7 +9,7 @@ export default Ember.Component.extend({
   placeholder:  '',
   value:        '',
   content:      [],
-  valuePath:    null,
+  searchPath:    null,
 
   hasContent:   computed.bool('filteredResults.length'),
   hasValue:     computed.notEmpty('value'),
@@ -22,15 +22,15 @@ export default Ember.Component.extend({
   },
 
   filteredResults: function() {
-    let value     = this.get('value');
-    let regex     = new RegExp(value, 'i');
-    let content   = this.get('content') || [];
-    let valuePath = this.get('valuePath');
+    let value      = this.get('value');
+    let regex      = new RegExp(value, 'i');
+    let content    = this.get('content') || [];
+    let searchPath = this.get('searchPath');
 
     if (value.length === 0) { return []; }
 
     return content.filter(function(record) {
-      let result = valuePath ? record.get(valuePath) : record;
+      let result = searchPath ? record.get(searchPath) : record;
 
       if (result) {
         return result.match(regex);

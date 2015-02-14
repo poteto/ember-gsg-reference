@@ -96,7 +96,7 @@ function createListingsForState(stateData) {
   console.log('Generating listings for ' + stateData.defaultCity);
 
   var promises = _.range(LISTINGS_PER_STATE).map(function() {
-    var coordinates = generateRandomPoint(stateData.lat, stateData.lng, 1000);
+    var coordinates = generateRandomPoint(stateData.lat, stateData.lng, 4000);
 
     var newListingId           = generateNewListingId();
     var childRef               = listingsRef.child(newListingId);

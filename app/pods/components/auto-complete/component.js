@@ -1,6 +1,6 @@
 import Ember from 'ember';
 
-const computed = Ember.computed;
+const { computed } = Ember;
 
 export default Ember.Component.extend({
   classNames:   ['auto-complete'],
@@ -16,13 +16,13 @@ export default Ember.Component.extend({
   showDropdown: computed.and('hasContent', 'hasValue'),
 
   actions: {
-    submit: function() {
-      this.sendAction('action', this.get('value'));
+    submit: function(listing) {
+      this.sendAction('action', listing);
     }
   },
 
   filteredResults: function() {
-    let value      = this.get('value');
+    let value      = this.getWithDefault('value', '').replace(/\W/g, '');
     let regex      = new RegExp(value, 'i');
     let content    = this.get('content') || [];
     let searchPath = this.get('searchPath');

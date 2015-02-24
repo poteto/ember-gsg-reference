@@ -5,7 +5,7 @@
     <div class="results">
       {{#each record in filteredResults }}
 
-        <div class="result">
+        <div class="result" {{ action 'submit' record on='click' }}>
 
           {{#if template}}
             {{yield record}}
@@ -19,8 +19,3 @@
     </div>
   {{/if}}
 </div>
-
-<div class="large-4 small-3 columns">
-  <a class="button expand" {{action 'submit'}}>Search</a>
-</div>
-

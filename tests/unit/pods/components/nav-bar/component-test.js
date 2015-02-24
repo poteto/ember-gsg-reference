@@ -4,7 +4,7 @@ import {
 } from 'ember-qunit';
 
 moduleForComponent('nav-bar', 'NavBarComponent', {
-  needs: ['component:auto-complete']
+  needs: ['component:auto-complete', 'helper:format-currency']
 });
 
 test('it renders', function() {

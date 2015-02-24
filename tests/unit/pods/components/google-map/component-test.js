@@ -15,10 +15,10 @@ moduleForComponent('google-map', 'GoogleMapComponent', {
 test('it renders', function() {
   expect(2);
 
-  var component = this.subject();
-  equal(component._state, 'preRender');
+  window.google = function() {};
+  var stub = sinon.stub(window, 'google');
 
-  var googleMapApi = {
+  stub.returns({
     maps: {
       LatLng() {
       },
@@ -28,15 +28,18 @@ test('it renders', function() {
       },
 
       Map() {
+      },
+
+      Marker() {
+
       }
     }
-  };
-
-  var googleMapApiStub = sinon.stub(googleMapApi);
-
-  run(() => {
-    component.set('api', googleMapApiStub);
   });
+
+  var component = this.subject();
+  equal(component._state, 'preRender');
+
+  component.set('api', stub);
 
   // appends the component to the page
   this.append();

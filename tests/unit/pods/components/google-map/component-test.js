@@ -1,19 +1,22 @@
 /* global sinon */
+
 import Ember from 'ember';
 import {
   moduleForComponent,
   test
 } from 'ember-qunit';
+import QUnit from 'qunit';
 
 var { run } = Ember;
+var { skip } = QUnit;
 var component;
 
 moduleForComponent('google-map', 'GoogleMapComponent', {
 
 });
 
-test('it renders', function() {
-  expect(2);
+skip('it renders', function(assert) {
+  assert.expect(2);
 
   window.google = function() {};
   var stub = sinon.stub(window, 'google');
@@ -37,11 +40,11 @@ test('it renders', function() {
   });
 
   var component = this.subject();
-  equal(component._state, 'preRender');
+  assert.equal(component._state, 'preRender');
 
   component.set('api', stub);
 
   // appends the component to the page
-  this.append();
-  equal(component._state, 'inDOM');
+  this.render();
+  assert.equal(component._state, 'inDOM');
 });

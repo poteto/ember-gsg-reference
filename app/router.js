@@ -7,9 +7,8 @@ var Router = Ember.Router.extend({
 
 Router.map(function() {
   this.resource('state', { path: '/:state_id' }, function() {
-    this.route('listing');
   });
-
+  this.resource('listing', { path: 'listings/:listing_id' });
 });
 
 export default Router;

@@ -1,1 +1,11 @@
-{{outlet}}
+<div class="row">
+  <div class="right">
+    {{#link-to 'state' listing.state.id }}Back to {{listing.state.name}}.{{/link-to}}
+  </div>
+
+  <h3>{{listing.name}}</h3>
+
+  <small>{{listing.city}}</small>
+
+</div>
+

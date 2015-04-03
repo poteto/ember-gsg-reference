@@ -1,11 +1,11 @@
 <div class="stateWrapper">
   <div class="listings-container">
-    {{hero-section name=model.name backgroundImage=model.backgroundImage}}
+    {{hero-section name=attrs.state.name backgroundImage=attrs.state.backgroundImage}}
     {{outlet}}
   </div>
 
   <div class="googleMap-container">
-    {{google-map lat=model.lat lng=model.lng listings=model.listings}}
+    {{google-map lat=attrs.state.lat lng=attrs.state.lng listings=attrs.state.listings}}
   </div>
 </div>
 

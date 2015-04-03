@@ -1,40 +1,43 @@
 import Ember from 'ember';
 
-const { computed } = Ember;
+const {
+  computed,
+  get: get,
+  getWithDefault
+} = Ember;
 
 export default Ember.Component.extend({
-  classNames:   ['auto-complete'],
+  classNames: [ 'auto-complete' ],
 
-  // default values
-  placeholder:  '',
-  value:        '',
-  content:      [],
-  searchPath:    null,
+  placeholder  : '',
+  value        : '',
+  content      : [],
+  searchPath   : null,
 
-  hasContent:   computed.bool('filteredResults.length'),
-  hasValue:     computed.notEmpty('value'),
-  showDropdown: computed.and('hasContent', 'hasValue'),
+  hasContent   : computed.bool('filteredResults.length'),
+  hasValue     : computed.notEmpty('value'),
+  showDropdown : computed.and('hasContent', 'hasValue'),
 
   actions: {
-    submit: function(listing) {
+    submit(listing) {
       this.sendAction('action', listing);
     }
   },
 
-  filteredResults: function() {
-    let value      = this.getWithDefault('value', '').replace(/\W/g, '');
+  filteredResults: computed('content', 'value', function() {
+    let value      = getWithDefault('value', '').replace(/\W/g, '');
     let regex      = new RegExp(value, 'i');
-    let content    = this.get('content') || [];
-    let searchPath = this.get('searchPath');
+    let content    = get('content') || [];
+    let searchPath = get('searchPath');
 
     if (value.length === 0) { return []; }
 
-    return content.filter(function(record) {
+    return content.filter((record) => {
       let result = searchPath ? record.get(searchPath) : record;
 
       if (result) {
         return result.match(regex);
       }
     }).slice(0, 5);
-  }.property('content', 'value')
+  })
 });

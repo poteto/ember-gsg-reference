@@ -11,7 +11,7 @@
     "start": "ember server",
     "build": "ember build",
     "test": "ember test",
-    "seed": "node seed.js"
+    "seed": "node_modules/babel/bin/babel-node seed.es6.js"
   },
   "repository": "",
   "engines": {
@@ -20,6 +20,7 @@
   "author": "",
   "license": "MIT",
   "devDependencies": {
+    "babel": "^5.0.6",
     "broccoli-asset-rev": "^2.0.2",
     "broccoli-clean-css": "0.3.0",
     "dotenv": "^0.4.0",
@@ -43,6 +44,7 @@
     "ember-sinon": "0.0.3",
     "ember-watson": "^0.2.0",
     "emberfire": "1.4.3",
+    "exit": "^0.1.2",
     "faker": "^2.1.2",
     "firebase": "^2.2.3",
     "geocoder": "^0.2.2",

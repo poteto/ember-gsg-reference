@@ -4,7 +4,7 @@ import injectScript from 'ember-inject-script';
 export function initialize(/* container, application */) {
   window.initialize = () => Ember.K;
 
-  var url = 'https://maps.googleapis.com/maps/api/js?v=3&callback=initialize';
+  const url = 'https://maps.googleapis.com/maps/api/js?v=3&callback=initialize';
   injectScript(url).then(() => {
     return true;
   });

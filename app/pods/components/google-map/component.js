@@ -1,10 +1,12 @@
 import Ember from 'ember';
 
-var on             = Ember.on;
-var computed       = Ember.computed;
-var get            = Ember.get;
-var set            = Ember.set;
-var observer       = Ember.observer;
+const {
+  on,
+  computed,
+  get: get,
+  set: set,
+  observer
+} = Ember;
 
 export default Ember.Component.extend({
   classNames : [ 'googleMap' ],
@@ -31,7 +33,7 @@ export default Ember.Component.extend({
 
   markers: computed('listings.@each.{lat,lng}', 'api', function() {
     let { maps: GoogleMapsAPI } = get(this, 'api');
-    let markers = get(this, 'listings').map((listing) => {
+    return get(this, 'listings').map((listing) => {
       let lat = listing.get('lat');
       let lng = listing.get('lng');
 
@@ -40,8 +42,6 @@ export default Ember.Component.extend({
         position  : new GoogleMapsAPI.LatLng(lat, lng)
       });
     });
-
-    return markers;
   }),
 
   _mountMarkersToMap: observer('markers.@each', 'map', function() {

@@ -1,13 +1,14 @@
 import Ember from 'ember';
 
-const RSVP = Ember.RSVP;
+const { RSVP } = Ember;
 
 export default Ember.Route.extend({
-  model: function() {
+  model() {
     return RSVP.hash({
       listings: this.store.findAll('listing')
     });
   },
+
   setupController: function(controller, model) {
     controller.set('listings', model.listings);
   }

@@ -1,4 +1,10 @@
 import DS from 'ember-data';
+import Ember from 'ember';
+
+const {
+  get: get,
+  computed
+} = Ember;
 
 export default DS.Model.extend({
   name        : DS.attr('string'),
@@ -10,7 +16,7 @@ export default DS.Model.extend({
   state       : DS.belongsTo('state', { async: true }),
   city        : DS.attr('string'),
 
-  formattedPrice: function() {
-    return this.get('price') ? `$${this.get('price')}`: '';
-  }.property('price')
+  formattedPrice: computed('price', function() {
+    return get('price') ? `$${get(this, 'price')}`: '';
+  })
 });

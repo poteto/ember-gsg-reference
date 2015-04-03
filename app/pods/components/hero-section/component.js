@@ -1,15 +1,17 @@
 import Ember from 'ember';
 
-var get = Ember.get;
+const {
+  get:get,
+  computed
+} = Ember;
 
 export default Ember.Component.extend({
-  tagName: 'section',
-  classNames: [ 'heroSection' ],
-  attributeBindings: [ 'style' ],
+  tagName           : 'section',
+  classNames        : [ 'heroSection' ],
+  attributeBindings : [ 'style' ],
 
-  style: Ember.computed('backgroundImage', function() {
-    var backgroundImage = get(this, 'backgroundImage');
+  style: computed('backgroundImage', function() {
+    const backgroundImage = get(this, 'backgroundImage');
     return `background-image: url('${backgroundImage}')`;
   })
-
 });

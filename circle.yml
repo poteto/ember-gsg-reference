@@ -2,11 +2,6 @@ dependencies:
   pre:
     - npm install -g ember-cli ember-cli-divshot
 
-test:
-  override:
-    - mkdir -p $CIRCLE_TEST_REPORTS/qunit
-    - "ember test --silent 2>&1 | tee  $CIRCLE_TEST_REPORTS/qunit/results.xml"
-
 deployment:
   staging:
     branch: develop

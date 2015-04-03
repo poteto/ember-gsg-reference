@@ -19,7 +19,7 @@
          action='search' content=listings searchPath='name' as |listing|}}
 
         <!-- Custom template for the typeahead-->
-        <div class="price right">{{format-currency listing.price}}</div>
+        <div class="price right">{{format-currency '$' listing.price}}</div>
 
         <div class="listing-name">{{listing.name}}</div>
 

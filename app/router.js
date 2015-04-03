@@ -9,5 +9,4 @@ export default Router.map(function() {
   this.resource('state', { path: '/:state_id' }, function() {
     this.route('listing');
   });
-
 });

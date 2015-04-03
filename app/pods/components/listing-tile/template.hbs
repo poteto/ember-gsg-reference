@@ -1,0 +1,11 @@
+<div class="listingTile-coverImage">
+  <img {{bind-attr src=listing.image}} />
+</div>
+
+<div class="listingTile-details">
+  <div class="listingTile-details--price right">
+    {{ format-currency listing.price precision=0}}
+    </div>
+  <div class="listingTile-details--name">{{listing.name}}</div>
+  <small class="listingTile-details--city">{{listing.city}}</small>
+</div>

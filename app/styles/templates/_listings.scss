@@ -1,0 +1,22 @@
+.stateWrapper {
+  display: flex;
+  flex-flow: row wrap;
+  display: flex;
+  overflow: hidden;
+  height: 100vh;
+  position: relative;
+  width: 100%;
+  backface-visibility: hidden;
+  will-change: overflow;
+}
+
+.listings-container {
+  flex: $listings-flex;
+  order: $listings-order;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.listings-content {
+  padding: $default-unit*6 $default-unit*2;
+}

@@ -43,7 +43,7 @@
     "ember-inject-script": "0.0.2",
     "ember-sinon": "0.0.3",
     "ember-watson": "^0.2.0",
-    "emberfire": "1.4.3",
+    "emberfire": "1.4.4",
     "exit": "^0.1.2",
     "faker": "^2.1.2",
     "firebase": "^2.2.3",

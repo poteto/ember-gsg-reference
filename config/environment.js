@@ -3,6 +3,8 @@
 module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'ember-getting-started',
+    podModulePrefix: 'ember-getting-started/pods',
+    usePods: true,
     typekitId: process.env.TYPEKIT_ID,
     environment: environment,
     firebase: 'https://' + process.env.FIREBASE_URL + '.firebaseio.com/',

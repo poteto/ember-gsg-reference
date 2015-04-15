@@ -1,7 +1,5 @@
 # Ember-getting-started
 
-[![Circle CI](https://circleci.com/gh/poteto/ember-getting-started.svg?style=svg)](https://circleci.com/gh/poteto/ember-getting-started)
-
 This README outlines the details of collaborating on this Ember application.
 A short introduction of this app could easily go here.
 
@@ -24,21 +22,8 @@ You will need the following things properly installed on your computer.
 
 ## Running / Development
 
-First, create a new [Firebase app](https://www.firebase.com/), and then note down the URL. Make a copy of `.env.example` and save it as `.env`, with your URL like so:
-
-```
-FIREBASE_URL=app-url
-TYPEKIT_ID=typekit-id 
-```
-
-You can also add a [Typekit ID](https://typekit.com/) if you have one.
-
 * `ember server`
 * Visit your app at [http://localhost:4200](http://localhost:4200).
-
-### Seed data
-
-To get some seed data into your Firebase instance, a seed script is included. To run it simply execute `npm run seed` from the project root, and you will have some cities and listings.
 
 ### Code Generators
 

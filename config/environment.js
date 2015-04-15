@@ -3,7 +3,9 @@
 module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'ember-getting-started',
+    typekitId: process.env.TYPEKIT_ID,
     environment: environment,
+    firebase: 'https://' + process.env.FIREBASE_URL + '.firebaseio.com/',
     baseURL: '/',
     locationType: 'auto',
     EmberENV: {
@@ -16,6 +18,16 @@ module.exports = function(environment) {
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
+    },
+
+    contentSecurityPolicy: {
+      'default-src': "'none'",
+      'script-src': "'self' 'unsafe-eval' 'unsafe-inline' use.typekit.net https://*.firebaseio.com *.googleapis.com *.gstatic.com",
+      'connect-src': "'self' www.google-analytics.com wss://*.firebaseio.com",
+      'font-src': "'self' data: fonts.gstatic.com",
+      'img-src': "'self' p.typekit.net google-analytics.com lorempixel.com *.googleapis.com *.gstatic.com placeimg.com *.imgur.com",
+      'style-src': "'self' 'unsafe-inline' use.typekit.net fonts.googleapis.com",
+      'media-src': "'self'"
     }
   };
 
